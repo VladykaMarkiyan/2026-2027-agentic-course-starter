@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "node scripts/agent-log-hook.mjs copilot",
+        "powershell": "node scripts/agent-log-hook.mjs copilot",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "type": "command",
+        "bash": "node scripts/agent-log-hook.mjs copilot error",
+        "powershell": "node scripts/agent-log-hook.mjs copilot error",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

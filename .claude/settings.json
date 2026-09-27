@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/agent-log-hook.mjs claude-code ok",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/agent-log-hook.mjs claude-code error",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const ev=JSON.parse(require('fs').readFileSync(0,'utf8')); const p=ev.tool_input?.file_path||''; if(p.endsWith('.env')||p.endsWith('.env.local')){process.exit(1);}else{process.exit(0);}\" || exit 1",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
