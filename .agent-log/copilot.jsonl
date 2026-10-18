@@ -6,3 +6,6 @@
 {"ts":"2026-09-28T10:28:45.450Z","tool":"readFile","input":{"path":"app/page.tsx"},"result":"ok","session":"copilot-eval-neg1-1790581725","source":"copilot"}
 {"ts":"2026-09-28T10:29:50.560Z","tool":"readFile","input":{"path":"src/models.ts"},"result":"ok","session":"copilot-eval-neg2-1790581790","source":"copilot"}
 {"ts":"2026-09-28T10:30:55.670Z","tool":"readFile","input":{"path":"app/api/health/route.ts"},"result":"ok","session":"copilot-eval-neg3-1790581855","source":"copilot"}
+{"ts":"2026-10-18T14:26:07.570Z","tool":"Edit","input":{"file_path":".env"},"result":"denied","session":"test-session-guard-1","source":"copilot"}
+{"ts":"2026-10-18T14:26:07.628Z","tool":"Bash","input":{"command":"echo TEST_KEY=*** >> .env"},"result":"denied","session":"test-session-guard-2","source":"copilot"}
+{"ts":"2026-10-18T14:26:12.738Z","tool":"PowerShell","input":{"command":"node -e \"fs.appendFileSync(\\\".env\\\", \\\"TEST_KEY=***"},"result":"denied","session":"test-session-guard-3","source":"copilot"}

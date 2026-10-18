@@ -11,3 +11,7 @@
 {"ts":"2026-09-28T10:18:45.450Z","tool":"read","input":{"filePath":"app/page.tsx"},"result":"ok","session":"oc-eval-neg1-1790581125","source":"opencode"}
 {"ts":"2026-09-28T10:19:50.560Z","tool":"read","input":{"filePath":"src/models.ts"},"result":"ok","session":"oc-eval-neg2-1790581190","source":"opencode"}
 {"ts":"2026-09-28T10:20:55.670Z","tool":"read","input":{"filePath":"app/api/health/route.ts"},"result":"ok","session":"oc-eval-neg3-1790581255","source":"opencode"}
+{"ts":"2026-09-28T11:42:01.120Z","tool":"edit","input":{"filePath":".env"},"result":"denied","session":"oc-guard-1","source":"opencode"}
+{"ts":"2026-09-28T11:43:15.230Z","tool":"bash","input":{"command":"echo TEST_KEY=*** >> .env"},"result":"denied","session":"oc-guard-2","source":"opencode"}
+{"ts":"2026-09-28T11:44:30.340Z","tool":"bash","input":{"command":"node -e \"fs.appendFileSync(\x27.env\x27, \x27TEST_KEY=***\x27)\""},"result":"denied","session":"oc-guard-3","source":"opencode"}
+{"ts":"2026-09-28T11:50:00.100Z","tool":"mcp__context7__query-docs","input":{"query":"Next.js App Router GET route handler"},"result":"ok","session":"oc-mcp-1","source":"opencode"}
