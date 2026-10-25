@@ -1,0 +1,137 @@
+{
+  "runAt": "2026-10-25T22:16:41.808Z",
+  "budget": {
+    "maxBranches": 4,
+    "maxTokens": 200000,
+    "maxWallMs": 600000
+  },
+  "wallMs": 78,
+  "sumBranchMs": 303,
+  "inputTokens": 6000,
+  "outputTokens": 1200,
+  "done": 20,
+  "failed": [],
+  "stoppedEarly": false,
+  "branches": [
+    {
+      "id": "q-01",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 61
+    },
+    {
+      "id": "q-02",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 57
+    },
+    {
+      "id": "q-03",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 60
+    },
+    {
+      "id": "q-04",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 61
+    },
+    {
+      "id": "q-05",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 6
+    },
+    {
+      "id": "q-06",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 5
+    },
+    {
+      "id": "q-07",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 5
+    },
+    {
+      "id": "q-08",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 5
+    },
+    {
+      "id": "q-09",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 5
+    },
+    {
+      "id": "q-10",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 5
+    },
+    {
+      "id": "q-11",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 4
+    },
+    {
+      "id": "q-12",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 4
+    },
+    {
+      "id": "q-13",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 4
+    },
+    {
+      "id": "q-14",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 4
+    },
+    {
+      "id": "q-15",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 3
+    },
+    {
+      "id": "q-16",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 3
+    },
+    {
+      "id": "q-17",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 3
+    },
+    {
+      "id": "q-18",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 3
+    },
+    {
+      "id": "q-19",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 3
+    },
+    {
+      "id": "q-20",
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "ms": 2
+    }
+  ]
+}
