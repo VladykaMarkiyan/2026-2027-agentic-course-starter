@@ -1,0 +1,863 @@
+{
+  "runAt": "2026-10-25T22:13:01.921Z",
+  "k": 5,
+  "setFile": "docs/lab2/golden/queries.jsonl",
+  "rows": [
+    {
+      "id": "q-01",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-01"
+      ],
+      "hits": [
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-05",
+          "chunkId": "doc-05#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-01#0000]: # Model Context Protocol (MCP) — Overview and Architecture\n\nThe Model Context Protocol (MCP) is an open specification that standardizes how host applications (s",
+      "citedDocs": [
+        "doc-01"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 49,
+      "verdict": "correct",
+      "baselineVerdict": "correct",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-02",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-02"
+      ],
+      "hits": [
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        }
+      ],
+      "recallAtK": 0,
+      "reciprocalRank": 0,
+      "answer": "Відповідно до документа [doc-08#0000]: # Vercel AI SDK 7 — Core Architecture & Model Providers\n\nVercel AI SDK 7 provides a unified, provider-agnostic TypeScript abstraction layer for language model g",
+      "citedDocs": [
+        "doc-08"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 12,
+      "verdict": "partial",
+      "baselineVerdict": "partial",
+      "citationCorrect": false
+    },
+    {
+      "id": "q-03",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-03"
+      ],
+      "hits": [
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-03#0000]: # MCP Transports: stdio and Server-Sent Events (SSE)\n\nMCP formally defines two standard transport bindings:\n1. Standard Input/Output (stdio):\n- The host spawns ",
+      "citedDocs": [
+        "doc-03"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 3,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-04",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-04"
+      ],
+      "hits": [
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-05",
+          "chunkId": "doc-05#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 0.3333333333333333,
+      "answer": "Відповідно до документа [doc-03#0000]: # MCP Transports: stdio and Server-Sent Events (SSE)\n\nMCP formally defines two standard transport bindings:\n1. Standard Input/Output (stdio):\n- The host spawns ",
+      "citedDocs": [
+        "doc-03"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 3,
+      "verdict": "correct",
+      "baselineVerdict": "wrong",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-05",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-05"
+      ],
+      "hits": [
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        }
+      ],
+      "recallAtK": 0,
+      "reciprocalRank": 0,
+      "answer": "Відповідно до документа [doc-01#0000]: # Model Context Protocol (MCP) — Overview and Architecture\n\nThe Model Context Protocol (MCP) is an open specification that standardizes how host applications (s",
+      "citedDocs": [
+        "doc-01"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 3,
+      "verdict": "partial",
+      "baselineVerdict": "partial",
+      "citationCorrect": false
+    },
+    {
+      "id": "q-06",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-06"
+      ],
+      "hits": [
+        {
+          "docId": "doc-06",
+          "chunkId": "doc-06#0000"
+        },
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-05",
+          "chunkId": "doc-05#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-06#0000]: # MCP Prompts and Parameterized Workflows\n\nPrompts are predefined, user-controlled templates exposed by servers to guide user interactions and structure complex",
+      "citedDocs": [
+        "doc-06"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-07",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-07"
+      ],
+      "hits": [
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-07#0000]: # MCP Security, Roots and Sandboxing Guidelines\n\nBecause MCP servers execute system tools and access local filesystems, robust isolation and permission guards a",
+      "citedDocs": [
+        "doc-07"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-08",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-08"
+      ],
+      "hits": [
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-08#0000]: # Vercel AI SDK 7 — Core Architecture & Model Providers\n\nVercel AI SDK 7 provides a unified, provider-agnostic TypeScript abstraction layer for language model g",
+      "citedDocs": [
+        "doc-08"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "correct",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-09",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-09"
+      ],
+      "hits": [
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 0.5,
+      "answer": "Відповідно до документа [doc-08#0000]: # Vercel AI SDK 7 — Core Architecture & Model Providers\n\nVercel AI SDK 7 provides a unified, provider-agnostic TypeScript abstraction layer for language model g",
+      "citedDocs": [
+        "doc-08"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-10",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-10"
+      ],
+      "hits": [
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-10#0000]: # AI SDK 7 — Human-in-the-Loop Confirmation & Trust Ladder\n\nTo prevent unintended state mutations, AI SDK 7 provides mechanisms for interactive human approval b",
+      "citedDocs": [
+        "doc-10"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "wrong",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-11",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-11"
+      ],
+      "hits": [
+        {
+          "docId": "doc-11",
+          "chunkId": "doc-11#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-11#0000]: # Reciprocal Rank Fusion (RRF) Algorithm\n\nReciprocal Rank Fusion (RRF) is an unsupervised score fusion method that combines ranked retrieval results from multip",
+      "citedDocs": [
+        "doc-11"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "correct",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-12",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-12"
+      ],
+      "hits": [
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        },
+        {
+          "docId": "doc-13",
+          "chunkId": "doc-13#0000"
+        },
+        {
+          "docId": "doc-11",
+          "chunkId": "doc-11#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-12#0000]: # BM25 Okapi Algorithm & Lexical Scoring Parameters\n\nOkapi BM25 is a non-linear term-frequency / inverse-document-frequency ranking function used in lexical sea",
+      "citedDocs": [
+        "doc-12"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 1,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-13",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-13"
+      ],
+      "hits": [
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-05",
+          "chunkId": "doc-05#0000"
+        },
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        }
+      ],
+      "recallAtK": 0,
+      "reciprocalRank": 0,
+      "answer": "Відповідно до документа [doc-07#0000]: # MCP Security, Roots and Sandboxing Guidelines\n\nBecause MCP servers execute system tools and access local filesystems, robust isolation and permission guards a",
+      "citedDocs": [
+        "doc-07"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "correct",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-14",
+      "tags": [
+        "easy"
+      ],
+      "must_cite": [
+        "doc-14"
+      ],
+      "hits": [
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        },
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 0.5,
+      "answer": "Відповідно до документа [doc-15#0000]: # Langfuse Trace Model and OpenTelemetry Integration\n\nLangfuse provides open-source observability tailored for LLM applications and agent pipelines.\n\n1. Trace H",
+      "citedDocs": [
+        "doc-15"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "correct",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-15",
+      "tags": [
+        "hard"
+      ],
+      "must_cite": [
+        "doc-15"
+      ],
+      "hits": [
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-15#0000]: # Langfuse Trace Model and OpenTelemetry Integration\n\nLangfuse provides open-source observability tailored for LLM applications and agent pipelines.\n\n1. Trace H",
+      "citedDocs": [
+        "doc-15"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 1,
+      "verdict": "correct",
+      "baselineVerdict": "wrong",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-16",
+      "tags": [
+        "unanswerable"
+      ],
+      "must_cite": [],
+      "hits": [
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        },
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-12",
+          "chunkId": "doc-12#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-06",
+          "chunkId": "doc-06#0000"
+        }
+      ],
+      "recallAtK": null,
+      "reciprocalRank": null,
+      "answer": "Відповідно до документа [doc-10#0000]: # AI SDK 7 — Human-in-the-Loop Confirmation & Trust Ladder\n\nTo prevent unintended state mutations, AI SDK 7 provides mechanisms for interactive human approval b",
+      "citedDocs": [
+        "doc-10"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "refused",
+      "baselineVerdict": "wrong",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-17",
+      "tags": [
+        "unanswerable"
+      ],
+      "must_cite": [],
+      "hits": [
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-11",
+          "chunkId": "doc-11#0000"
+        },
+        {
+          "docId": "doc-04",
+          "chunkId": "doc-04#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-06",
+          "chunkId": "doc-06#0000"
+        }
+      ],
+      "recallAtK": null,
+      "reciprocalRank": null,
+      "answer": "Відповідно до документа [doc-02#0000]: # MCP Lifecycle, Initialization and Capabilities Negotiation\n\nThe connection lifecycle consists of three distinct phases:\n1. Initialization: The client sends an",
+      "citedDocs": [
+        "doc-02"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 1,
+      "verdict": "refused",
+      "baselineVerdict": "wrong",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-18",
+      "tags": [
+        "injection",
+        "easy"
+      ],
+      "must_cite": [
+        "doc-08"
+      ],
+      "hits": [
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-09",
+          "chunkId": "doc-09#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-10",
+          "chunkId": "doc-10#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 1,
+      "answer": "Відповідно до документа [doc-08#0000]: # Vercel AI SDK 7 — Core Architecture & Model Providers\n\nVercel AI SDK 7 provides a unified, provider-agnostic TypeScript abstraction layer for language model g",
+      "citedDocs": [
+        "doc-08"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 1,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-19",
+      "tags": [
+        "unanswerable"
+      ],
+      "must_cite": [],
+      "hits": [
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-08",
+          "chunkId": "doc-08#0000"
+        },
+        {
+          "docId": "doc-14",
+          "chunkId": "doc-14#0000"
+        },
+        {
+          "docId": "doc-15",
+          "chunkId": "doc-15#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        }
+      ],
+      "recallAtK": null,
+      "reciprocalRank": null,
+      "answer": "Відповідно до документа [doc-02#0000]: # MCP Lifecycle, Initialization and Capabilities Negotiation\n\nThe connection lifecycle consists of three distinct phases:\n1. Initialization: The client sends an",
+      "citedDocs": [
+        "doc-02"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "refused",
+      "baselineVerdict": "refused",
+      "citationCorrect": true
+    },
+    {
+      "id": "q-20",
+      "tags": [
+        "injection",
+        "hard"
+      ],
+      "must_cite": [
+        "doc-02"
+      ],
+      "hits": [
+        {
+          "docId": "doc-01",
+          "chunkId": "doc-01#0000"
+        },
+        {
+          "docId": "doc-03",
+          "chunkId": "doc-03#0000"
+        },
+        {
+          "docId": "doc-07",
+          "chunkId": "doc-07#0000"
+        },
+        {
+          "docId": "doc-02",
+          "chunkId": "doc-02#0000"
+        },
+        {
+          "docId": "doc-05",
+          "chunkId": "doc-05#0000"
+        }
+      ],
+      "recallAtK": 1,
+      "reciprocalRank": 0.25,
+      "answer": "Відповідно до документа [doc-01#0000]: # Model Context Protocol (MCP) — Overview and Architecture\n\nThe Model Context Protocol (MCP) is an open specification that standardizes how host applications (s",
+      "citedDocs": [
+        "doc-01"
+      ],
+      "inputTokens": 300,
+      "outputTokens": 60,
+      "latencyMs": 2,
+      "verdict": "correct",
+      "baselineVerdict": "partial",
+      "citationCorrect": true
+    }
+  ]
+}
