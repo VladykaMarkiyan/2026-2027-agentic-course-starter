@@ -1,0 +1,7 @@
+diff --git a/scripts/validate-golden.ts b/scripts/validate-golden.ts
+--- a/scripts/validate-golden.ts
++++ b/scripts/validate-golden.ts
+@@ -35,5 +35,2 @@
+-  if (count('unanswerable') < limits.unanswerable) {
+-    problems.push(`unanswerable ${count('unanswerable')}, потрібно >= ${limits.unanswerable}`);
+-  }
