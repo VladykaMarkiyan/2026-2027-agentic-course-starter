@@ -150,6 +150,22 @@
 
 ---
 
+## Сесія 10 · 2026-11-01 (Крок 09: Підключення сервера до агентів кодування та до застосунку)
+
+| Поле | Значення |
+|---|---|
+| Інструмент і модель | Antigravity / Gemini 3.8 Flash |
+| Режим дозволів | Interactive / Plan mode |
+| Рівень довіри (L0–L5) | L3 (Конфігурація MCP для агентів кодування, клієнт застосунку mcp-demo.ts, збір доказів) |
+| Задача | Крок 09: Створити конфігурації `.mcp.json` та `opencode.json`, написати скрипт клієнта `scripts/mcp-demo.ts`, зафіксувати виклики з обох сторін у `docs/lab2/traces/mcp-calls.jsonl`, створити звіт `docs/lab2/mcp-integration.md` |
+| Що агент запропонував | Підключити OpenCode (шлях за $0) та Claude Code, реалізувати клієнт через `@modelcontextprotocol/client` із очищеним середовищем `getDefaultEnvironment` |
+| Що агент виконав | Написав `scripts/mcp-demo.ts`, зняв доказ обох інструментів та відмови, перевірив взаємодію з `opencode` та `lab2-app`, записав звіт у `docs/lab2/mcp-integration.md` |
+| Де і чому ви втрутилися | Виправлено виклик npx на Windows (`npx.cmd`), ізольовано stderr від PowerShell винятків, підтверджено відсутність секретів у закомічених конфігураціях |
+| Які докази прийняли | Згруповані виклики у `mcp-calls.jsonl` зафіксовано для обох `source` (`opencode` та `lab2-app`), наявні відмови (`refused`), вивід `mcp-demo-output.txt` валідний |
+| Посилання | `.mcp.json` · `opencode.json` · `scripts/mcp-demo.ts` · `docs/lab2/mcp-integration.md` · `docs/lab2/traces/mcp-calls.jsonl` |
+
+---
+
 ## Інциденти
 | Дата | Що сталося | Що зроблено (коли відкликано ключ) | Рядок журналу / коміт |
 |---|---|---|---|
