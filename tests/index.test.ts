@@ -6,7 +6,7 @@ import { normalize } from '../src/rag/chunk';
 import type { IndexFile } from '../src/rag/store';
 import { sha256 } from '../src/rag/store';
 
-const index = JSON.parse(readFileSync('data/index.json', 'utf8')) as IndexFile;
+const index = JSON.parse(readFileSync('data/index.json', 'utf8').replace(/^\uFEFF/, '')) as IndexFile;
 
 describe('data/index.json', () => {
   it('має 10–40 документів', () => {
@@ -19,7 +19,7 @@ describe('data/index.json', () => {
   });
 
   it('кожен фрагмент розвʼязується назад у файл колекції', () => {
-    const texts = new Map(index.documents.map((d) => [d.id, normalize(readFileSync(d.path, 'utf8'))]));
+    const texts = new Map(index.documents.map((d) => [d.id, normalize(readFileSync(d.path.replace(/\\/g, '/'), 'utf8'))]));
     for (const c of index.chunks) {
       const text = texts.get(c.docId);
       expect(text, `немає документа ${c.docId}`).toBeDefined();
@@ -29,7 +29,7 @@ describe('data/index.json', () => {
 
   it('документи не змінювалися після побудови індексу', () => {
     for (const d of index.documents) {
-      expect(sha256(normalize(readFileSync(d.path, 'utf8'))), `${d.id} змінився — npm run index`).toBe(d.sha256);
+      expect(sha256(normalize(readFileSync(d.path.replace(/\\/g, '/'), 'utf8'))), `${d.id} змінився — npm run index`).toBe(d.sha256);
     }
   });
 });

@@ -49,7 +49,7 @@ for (const file of files) {
   const parts = chunkDocument(docId, text, RULE);
   const vectors = await embedder.embedDocuments(parts.map((p) => p.text));
   parts.forEach((part, i) => chunks.push({ ...part, vector: (vectors[i] ?? []).map(round6) }));
-  documents.push({ id: docId, path: join(CORPUS, file), chars: text.length, sha256: sha256(text) });
+  documents.push({ id: docId, path: join(CORPUS, file).replace(/\\/g, '/'), chars: text.length, sha256: sha256(text) });
   console.log(`  ${docId}: ${text.length} симв. → ${parts.length} фрагм.`);
 }
 
