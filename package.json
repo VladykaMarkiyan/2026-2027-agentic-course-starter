@@ -19,13 +19,17 @@
     "sync-skills": "tsx scripts/sync-skills.ts",
     "log:import": "tsx scripts/transcript-to-jsonl.ts",
     "verify": "tsx scripts/verify.ts",
-    "index": "tsx scripts/build-index.ts"
+    "index": "tsx scripts/build-index.ts",
+    "mcp": "tsx src/mcp/server.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.69",
     "@ai-sdk/openai-compatible": "^3.0.48",
     "@langfuse/otel": "^6.0.0",
     "@langfuse/vercel-ai-sdk": "^6.0.0",
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@modelcontextprotocol/server": "^2.4.0",
     "@opentelemetry/sdk-node": "^0.223.0",
     "ai": "^7.0.99",
     "next": "^16.3.4",

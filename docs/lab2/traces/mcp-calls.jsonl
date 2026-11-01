@@ -1,0 +1,3 @@
+{"ts":"2026-11-01T21:53:13.447Z","source":"smoke-test","tool":"fetch_chunk","args":{"id":"doc-01#0000"},"result":"ok"}
+{"ts":"2026-11-01T21:53:13.456Z","source":"smoke-test","tool":"fetch_chunk","args":{"id":"doc-99#0000"},"result":"refused","why":"Error: фрагмента doc-99#0000 немає в індексі"}
+{"ts":"2026-11-01T21:53:13.457Z","source":"smoke-test","tool":"search_corpus","args":{"query":"Model Context Protocol","topK":5},"result":"ok","hits":5}

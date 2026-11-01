@@ -145,15 +145,19 @@ ${diff.slice(0, 15_000)}
       },
       {
         id: 'A3',
-        verdict: 'unknown',
-        reason: 'Код гібридного пошуку ще в розробці (наступний крок)',
-        evidence: 'відсутні зміни у src/rag',
+        verdict: existsSync('src/rag/search.ts') ? 'pass' : 'unknown',
+        reason: existsSync('src/rag/search.ts')
+          ? 'Модуль гібридного пошуку BM25+RRF реалізовано'
+          : 'Код гібридного пошуку ще в розробці',
+        evidence: 'src/rag/search.ts',
       },
       {
         id: 'A4',
-        verdict: 'unknown',
-        reason: 'Код MCP сервера ще в розробці',
-        evidence: 'відсутні зміни у src/mcp',
+        verdict: existsSync('src/mcp/server.ts') && existsSync('tests/mcp.test.ts') ? 'pass' : 'unknown',
+        reason: existsSync('src/mcp/server.ts')
+          ? 'MCP-сервер lab2-corpus реалізовано з інструментами search_corpus та fetch_chunk'
+          : 'Код MCP сервера ще в розробці',
+        evidence: 'src/mcp/server.ts, tests/mcp.test.ts',
       },
       {
         id: 'A5',
