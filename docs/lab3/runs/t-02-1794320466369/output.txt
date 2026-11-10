@@ -1,0 +1,1 @@
+{"session_id":"mock-01","total_cost_usd":0.001,"usage":{"input_tokens":50,"output_tokens":25}}
