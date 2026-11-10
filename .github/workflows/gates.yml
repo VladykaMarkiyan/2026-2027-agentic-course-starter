@@ -95,10 +95,41 @@ jobs:
           path: dist/**
           if-no-files-found: ignore
 
+  evals:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      verdict: ${{ steps.g.outputs.verdict }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Детерміновані оцінювачі на замороженому банку
+        id: g
+        timeout-minutes: 12
+        env:
+          EVAL_K: '1'
+          EVAL_BUCKET: regression
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          npx tsx scripts/evals/run-evals.ts docs/lab3/tasks.jsonl
+          npx tsx scripts/evals/gate.ts
+          echo "verdict=pass" >> "$GITHUB_OUTPUT"
+      - if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: evals
+          path: docs/lab3/evals.jsonl
+          if-no-files-found: ignore
+
   record:
     # складається й на червоному прогоні; needs бачить ЛИШЕ прямі залежності,
-    # тому тут перелічені всі чотири брами, а не одна остання
-    needs: [types, lint, tests, build]
+    # тому тут перелічені всі брами, а не одна остання
+    needs: [types, lint, tests, build, evals]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -115,9 +146,10 @@ jobs:
           V_LINT: ${{ needs.lint.result }}
           V_TESTS: ${{ needs.tests.result }}
           V_BUILD: ${{ needs.build.result }}
+          V_EVALS: ${{ needs.evals.result }}
         run: |
           node scripts/harness/record-gates.mjs \
-            --types "$V_TYPES" --lint "$V_LINT" --tests "$V_TESTS" --build "$V_BUILD" \
+            --types "$V_TYPES" --lint "$V_LINT" --tests "$V_TESTS" --build "$V_BUILD" --evals "$V_EVALS" \
             --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - uses: actions/upload-artifact@v7
         with:

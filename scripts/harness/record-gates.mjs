@@ -15,6 +15,7 @@ const gates = {
   lint: verdict(arg('lint')),
   tests: verdict(arg('tests')),
   build: verdict(arg('build')),
+  evals: verdict(arg('evals')),
 };
 
 const root = 'docs/lab3/runs';
