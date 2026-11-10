@@ -16,6 +16,7 @@ test-results/
 playwright-report/
 blob-report/
 coverage/
+gate-record.json
 
 # Системне
 .DS_Store

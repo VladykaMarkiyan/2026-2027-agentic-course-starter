@@ -19,3 +19,19 @@
 | Де і чому ви втрутилися | Перевірено відсутність незакомічених змін у головному дереві `git status`, підтверджено дотримання структури артефактів (`patch.diff`, `output.txt`, `agent.log`, `run.json`) |
 | Які докази прийняли | Тести `tests/harness/run-task.test.ts` (5/5 зелених), збережені артефакти у `docs/lab3/runs/t-01-...` та `docs/lab3/runs/t-02-...`, специфікація `docs/lab3/factory.md` |
 | Посилання | `docs/lab3/factory.md` · `docs/lab3/tasks.jsonl` · `docs/lab3/runs/` |
+
+---
+
+## Сесія 2 · 2026-11-10 (Крок 01: Ланцюг детермінованих брам)
+
+| Поле | Значення |
+|---|---|
+| Інструмент і модель | OpenCode 1.18.32 / Antigravity (Gemini 3.8 Flash) |
+| Режим дозволів | `dontAsk` + явний перелік дозволених інструментів |
+| Рівень довіри (L0–L5) | L3 (Налаштування CI-пайплайну, брам якості та збору вердиктів) |
+| Задача | Крок 01: Створення детермінованого ланцюга брам якості: `types` → `lint` → `tests` → `build` → `record`, скрипт `scripts/harness/record-gates.mjs`, конфігурація `.github/workflows/gates.yml`, документація `docs/lab3/gates.md` |
+| Що агент запропонував | Послідовний ланцюг із суворими таймаутами для кожної задачі; конфігурацію `concurrency` для скасування застарілих прогонів; використання `$GITHUB_OUTPUT` та виконання свідоцького кроку `record` навіть у разі падіння через `if: ${{ !cancelled() }}` |
+| Що агент виконав | Склав `.github/workflows/gates.yml`, реалізував `scripts/harness/record-gates.mjs` із валідацією запису в останній `run.json`, підготував опис матриці брам і навмисного падіння в `docs/lab3/gates.md` |
+| Де і чому ви втрутилися | Перевірено сумісність версій GitHub Actions та правильність передачі змінних середовища `needs.<job>.result` у скрипт запису |
+| Які докази прийняли | Робочий workflow `.github/workflows/gates.yml`, локальний тест `record-gates.mjs` пройшов успішно, документація `docs/lab3/gates.md` готова |
+| Посилання | `.github/workflows/gates.yml` · `scripts/harness/record-gates.mjs` · `docs/lab3/gates.md` |
