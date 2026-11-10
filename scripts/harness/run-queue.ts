@@ -4,6 +4,10 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
+  mayRunTask,
+  recordTaskResult,
+} from './circuit-breaker';
+import {
   claudeRunner,
   geminiRunner,
   opencodeRunner,
@@ -34,6 +38,17 @@ function getRunner(name: string): { runner: AgentRunner; path: string } {
       return { runner: claudeRunner, path: 'claude-code' };
     case 'opencode':
       return { runner: opencodeRunner, path: 'opencode-cli' };
+    case 'fail':
+      // Тестовий раннер, який навмисне падає для перевірки спрацьовування зупинення
+      return {
+        runner: () => ({
+          exitCode: 1,
+          stdout: '',
+          stderr: 'Budget limit reached (intentional stop test)',
+          timedOut: false,
+        }),
+        path: 'failing-agent',
+      };
     case 'fake':
       return {
         runner: () => ({
@@ -57,6 +72,13 @@ function getRunner(name: string): { runner: AgentRunner; path: string } {
 const { runner, path: agentPath } = getRunner(agentArg ?? 'gemini');
 
 for (const task of tasks) {
+  // Перевірка Circuit Breaker перед кожною задачею
+  const breakerCheck = mayRunTask();
+  if (!breakerCheck.allow) {
+    console.warn(`[CIRCUIT BREAKER BLOCKED] Чергу зупинено: ${breakerCheck.why}`);
+    break;
+  }
+
   const branch = `harness/${task.id}`;
   const tree = join('.harness-runs', task.id);
 
@@ -80,6 +102,11 @@ for (const task of tasks) {
     mkdirSync(keep, { recursive: true });
     cpSync(rec.artifact_dir, keep, { recursive: true });
 
+    // Оновлення стану circuit breaker
+    const taskOk = rec.exit_status === 'ok' && rec.acceptance_passed;
+    const tripReason = rec.exit_status !== 'ok' ? rec.exit_status : !rec.acceptance_passed ? 'acceptance_failed' : null;
+    const breakerState = recordTaskResult(taskOk, tripReason);
+
     // гілку фіксуємо: на ній працюють брами кроку 01
     try {
       git(['add', '-A'], tree);
@@ -92,7 +119,14 @@ for (const task of tasks) {
       console.warn(`[попередження push] Не вдалося виконати push гілки ${branch}: ${(pushErr as Error).message}`);
     }
 
-    console.log(`${task.id}: ${rec.exit_status}, acceptance ${rec.acceptance_passed ? 'pass' : 'fail'} → ${keep}`);
+    console.log(
+      `${task.id}: ${rec.exit_status}, acceptance ${rec.acceptance_passed ? 'pass' : 'fail'} [breaker: ${breakerState.state}] → ${keep}`,
+    );
+
+    if (breakerState.state === 'open') {
+      console.warn(`[CIRCUIT BREAKER OPENED] Чергу зупинено після задачі ${task.id}: аварійний стан відкрито`);
+      break;
+    }
   } finally {
     try {
       git(['worktree', 'remove', tree, '--force']);
