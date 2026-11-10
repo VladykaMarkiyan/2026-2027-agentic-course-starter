@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: c3d4e5f6a1b20345
+Task ID: t-syntax
+Error Class: модель
+Reason: галюцинація: модель додала any та зламала TypeScript AST
+Attributes / Spans: gen_ai.choice=broken_ast, exit_code=1 (typecheck failed)
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool

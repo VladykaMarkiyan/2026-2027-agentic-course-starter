@@ -101,3 +101,20 @@
 | Де і чому ви втрутилися | Перевірено збереження $100\%$ згоди на відкладеному holdout-наборі після зміни рубрики та підтверджено доцільність використання судді в CI як фінальної брами якості |
 | Які докази прийняли | Тести `tests/harness/judge.test.ts` зелені (158 тестів у проєкті), `typecheck` та `lint` без помилок, звіт `docs/lab3/judge.md` відповідає всім пунктам вимог курсу |
 | Посилання | `docs/lab3/judge-cases.jsonl` · `scripts/evals/calibrate-judge.ts` · `docs/lab3/verdicts/judge.jsonl` · `tests/harness/judge.test.ts` · `docs/lab3/judge.md` |
+
+
+---
+
+## Сесія 7 · 2026-11-10 (Крок 06: Трасування і аналіз помилок)
+
+| Поле | Значення |
+|---|---|
+| Інструмент і модель | OpenCode 1.18.32 / Antigravity (Gemini 3.8 Flash) |
+| Режим дозволів | `dontAsk` + явний перелік дозволених інструментів |
+| Рівень довіри (L0–L5) | L3 (Інструментація OpenTelemetry/Langfuse, прокидання trace_id, класифікація відмов) |
+| Задача | Крок 06: Налаштування експортера OpenTelemetry OTLP/HTTP `src/telemetry/otel.ts`, оновлення `.env.example`, прокидання `trace_id` у `scripts/harness/run-task.ts` та існуючі `run.json`, підготовка 10 класифікованих трас у `docs/lab3/traces/` (витяжки й знімки), аналітичний звіт `docs/lab3/errors.md` за 5 класами помилок |
+| Що агент запропонував | Архітектуру OTLP/HTTP без gRPC (який не підтримується Langfuse); вимкнення запису промптів/відповідей (`recordInputs: false`) для захисту приватності в публічному репозиторії; генерацію W3C trace ID для зв'язку між `run.json` і трасами OTel |
+| Що агент виконав | Створив модуль `src/telemetry/otel.ts`, оновив `.env.example` зі змінними OTLP, модифікував `run-task.ts`, сформував 10 текстових витяжок та знімків у `docs/lab3/traces/`, класифікував невдалі прогони (задача: 2, промпт: 2, інструмент: 2, модель: 2, харнес: 2) та задокументував у `docs/lab3/errors.md` |
+| Де і чому ви втрутилися | Перевірено точність експортованих символів бібліотек OpenTelemetry у `node_modules` (`OTLPTraceExporter`, `NodeSDK`, `OpenTelemetry`) та наявність `trace_id` у прогонах |
+| Які докази прийняли | Усі 158 тестів проходять, `typecheck` і `lint` зелені, у каталозі `docs/lab3/traces/` наявні всі артефакти, звіт `docs/lab3/errors.md` містить повну таблицю і числа |
+| Посилання | `src/telemetry/otel.ts` · `scripts/harness/run-task.ts` · `.env.example` · `docs/lab3/traces/` · `docs/lab3/errors.md` |

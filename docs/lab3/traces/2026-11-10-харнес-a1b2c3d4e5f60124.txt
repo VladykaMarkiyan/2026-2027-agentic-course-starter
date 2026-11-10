@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: a1b2c3d4e5f60124
+Task ID: t-breaker
+Error Class: харнес
+Reason: circuit_breaker: 3 послідовні збої перевели брейкер у стан OPEN
+Attributes / Spans: circuit_breaker.state=open, failure_count=3
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool

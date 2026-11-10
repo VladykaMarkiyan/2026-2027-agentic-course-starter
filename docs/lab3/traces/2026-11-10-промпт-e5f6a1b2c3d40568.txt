@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: e5f6a1b2c3d40568
+Task ID: t-irrelevant
+Error Class: промпт
+Reason: конфліктний промпт: нерелевантний рецепт борщу у ядро коду
+Attributes / Spans: prompt.irrelevant=true, agent_failed_intent=culinary_recipe
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool

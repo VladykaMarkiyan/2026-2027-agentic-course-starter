@@ -3,6 +3,7 @@
  * Один виклик = одна задача = один артефакт + один журнал прогону.
  */
 import { execFileSync, spawnSync } from 'node:child_process';
+import { randomBytes } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -174,7 +175,7 @@ export function runTask(
     acceptance,
     acceptance_passed: acceptance.length > 0 && acceptance.every((a) => a.exit === 0),
     ...readMeta(res.stdout),
-    trace_id: null,             // ← крок 06
+    trace_id: randomBytes(16).toString('hex'), // ← крок 06: W3C trace_id для OTel/Langfuse
     gates: {},                  // ← крок 01
   };
   writeFileSync(join(dir, 'run.json'), `${JSON.stringify(record, null, 2)}\n`, 'utf8');

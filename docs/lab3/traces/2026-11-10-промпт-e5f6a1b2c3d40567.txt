@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: e5f6a1b2c3d40567
+Task ID: t-ambiguous
+Error Class: промпт
+Reason: розмитий промпт: відсутні критерії змін, агент завершився порожнім diff
+Attributes / Spans: prompt.ambiguity=high, patch_bytes=0, no_actions_taken
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool

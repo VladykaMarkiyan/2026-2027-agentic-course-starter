@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: d4e5f6a1b2c30457
+Task ID: rej-02
+Error Class: задача
+Reason: flaky умова: затримка < 15 мкс залежить від CPU і не відтворюється детерміновано
+Attributes / Spans: task.acceptance=flaky_benchmark, target_latency=15us
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool

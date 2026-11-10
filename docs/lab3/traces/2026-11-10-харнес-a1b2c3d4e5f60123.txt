@@ -1,0 +1,9 @@
+=== OTel / Langfuse Trace Extract ===
+Date: 2026-11-10
+Trace ID: a1b2c3d4e5f60123
+Task ID: t-03
+Error Class: харнес
+Reason: budget_or_turns: перевищено ліміт 10 ходів у run-task.ts
+Attributes / Spans: gen_ai.agent.turns=10, exit_status=budget_or_turns
+Backend Ingestion: x-langfuse-ingestion-version=4, OTLP/HTTP
+Root Span: invoke_agent -> chat -> execute_tool
