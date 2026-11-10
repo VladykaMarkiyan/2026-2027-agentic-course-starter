@@ -1,0 +1,112 @@
+{
+  "created_at": "2026-11-10T17:01:43.711Z",
+  "k": 3,
+  "task_count": 21,
+  "tasks": {
+    "t-01": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-02": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-03": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-04": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-05": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-06": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-07": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-08": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-09": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-10": {
+      "bucket": "regression",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-11": {
+      "bucket": "new",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-12": {
+      "bucket": "new",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-13": {
+      "bucket": "new",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-14": {
+      "bucket": "new",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-15": {
+      "bucket": "new",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-16": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-17": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-18": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-19": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-20": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    },
+    "t-21": {
+      "bucket": "edge",
+      "pass_at_k": 1,
+      "pass_power_k": 1
+    }
+  }
+}
