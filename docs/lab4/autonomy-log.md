@@ -194,3 +194,23 @@
 
 ### Результат сесії:
 - Step 06 «Hardening» повністю завершено: OTel spans, spend guard та secret detection реалізовано та протестовано.
+
+
+---
+
+## Сесія 8: Cost Audit — Точний підрахунок токенів і вартості
+- **Мітка сесії:** `[COURSE-REPO: 2026-2027-agentic-course-starter, STEP 07]`
+- **Режим роботи:** `[PRODUCTION COST AUDIT]`
+- **Дата / Час:** 2026-11-23 ~16:27 UTC+2
+- **Агент / Модель:** Antigravity
+
+### Виконані дії:
+1. Розроблено `scripts/run-cost-audit.ts` — аудит повного пайплайну з мок-даними (5 компонентів).
+2. Запущено `npx tsx scripts/run-cost-audit.ts` — отримано точні цифри: **5,213 tokens, $0.000521**.
+3. Виявлено та виправлено помилку: `estimateAudioTokens` приймає секунди, не байти.
+4. Верифіковано spend limit: $0.000521 << $0.01 budget → ✅ WITHIN BUDGET.
+5. Зафіксовано OTel spans: 2 spans зі спільним traceId (W3C traceparent propagation).
+6. Створено `docs/lab4/cost.md` з детальною таблицею, формулами та порівнянням з бюджетом.
+
+### Результат сесії:
+- Step 07 «Cost Audit» повністю завершено: скрипт відтворюваний, документація повна.
