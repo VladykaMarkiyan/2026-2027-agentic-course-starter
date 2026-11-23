@@ -89,3 +89,31 @@
 - Фічу реалізовано без регресій.
 - Доведено готовність системи до миттєвого відкату (< 5 секунд).
 - Сформовано звіти `docs/lab4/change.md` та `docs/lab4/rollback.md`.
+
+
+---
+
+## Сесія 4: Мультиагентний пайплайн із жорстким бюджетом (Multi-Agent Pipeline & Short-Circuit)
+- **Мітка сесії:** `[COURSE-REPO]`
+- **Режим роботи:** `[PRODUCTION MULTI-AGENT DEVELOPMENT]`
+- **Цільовий репозиторій:** `2026-2027-agentic-course-starter`
+- **Дата / Час:** 2026-11-23 16:14 UTC+2
+- **Агент / Модель:** Antigravity (Gemini 2.5 Flash / Pro)
+
+### Виконані дії:
+1. Створено модуль `src/agent/multiagent.ts`:
+   - Визначено ролі `ResearcherAgent` та `SynthesizerAgent`.
+   - Задекларовано Zod-схеми `ResearchContractSchema` та `SynthesisResultSchema`.
+   - Реалізовано конфігурацію бюджету `PipelineBudget` (ліміти turns, токенів input/output, таймаут 30с).
+   - Впроваджено логіку Short-Circuit: унеможливлення запуску другого агента при помилках чи перелімітах першого.
+2. Розроблено тестовий набір у `tests/multiagent.test.ts` (5 тестів: нормальний запуск, short-circuit за токенами, таймаут, валідація схеми Zod, переліміт turns синтезатора).
+   - Усі 5 тестів пройшли за 690 мс.
+3. Перевірено строгу типізацію (`npm run typecheck` / `tsc --noEmit` — 0 помилок).
+4. Запущено скрипт `scripts/run-multiagent-runs.ts` із фіксацією метрик трьох обов'язкових прогонів:
+   - Прогін 1: `COMPLETED` (2150 in / 630 out токенів, 730 мс).
+   - Прогін 2: `RESEARCHER_BUDGET_EXCEEDED` (14500 in > 10000 ліміт, Short-Circuit спрацював, Synthesizer пропущено).
+   - Прогін 3: `RESEARCHER_TIMEOUT` (1500 мс > 1000 мс ліміт, Short-Circuit спрацював, Synthesizer пропущено).
+5. Створено артефакт `docs/lab4/multiagent.md` з Mermaid-діаграмою, JSON-схемами та зведеною таблицею прогонів.
+
+### Результат сесії:
+- Мультиагентний пайплайн працює надійно, безпечно та детерміновано відсікає надлишкові витрати ресурсів.
