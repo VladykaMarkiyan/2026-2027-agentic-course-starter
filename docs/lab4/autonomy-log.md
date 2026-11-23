@@ -172,3 +172,25 @@
 ### Результат сесії:
 - Step 05 «Мультимодальний вхід» повністю завершено: код, тести, typecheck, документація.
 - Всі 8 тестових сценаріїв проходять, TypeScript strict mode задоволено.
+
+
+---
+
+## Сесія 7: Hardening — OTel, Spend Limits, Secret Leak Check
+- **Мітка сесії:** `[COURSE-REPO: 2026-2027-agentic-course-starter, STEP 06]`
+- **Режим роботи:** `[PRODUCTION HARDENING DEVELOPMENT]`
+- **Дата / Час:** 2026-11-23 ~16:25 UTC+2
+- **Агент / Модель:** Antigravity
+
+### Виконані дії:
+1. Реалізовано `src/agent/hardening.ts` з трьома рівнями захисту:
+   - `SpanRecorder` + `generateTraceContext` — OTel-сумісне span-трасування з W3C traceparent propagation.
+   - `checkSpendLimit` + `instrumentedCall` — pre-flight USD бюджет-перевірка; fn не викликається при перевищенні.
+   - `scanForSecrets` + `sanitizeOutput` — 8 regex-патернів для OpenAI, Bearer, GitHub PAT, AWS, Generic API key, Private Key, Google OAuth, Slack.
+2. Написано `tests/hardening.test.ts` — **14 тестів** у 3 групах.
+3. Запущено `npm test tests/hardening.test.ts` → **14/14 PASSED** (237ms).
+4. `npm run typecheck` → **0 помилок**.
+5. Створено `docs/lab4/hardening.md` з архітектурою, таблицею патернів, Mermaid flow-діаграмою та деталями всіх 14 тестів.
+
+### Результат сесії:
+- Step 06 «Hardening» повністю завершено: OTel spans, spend guard та secret detection реалізовано та протестовано.
